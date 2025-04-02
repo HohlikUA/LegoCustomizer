@@ -25,6 +25,10 @@ public class CategorySwitcher : MonoBehaviour
     public Sprite[] hairs;
     public Sprite[] prints;
 
+    // Координаты, размеры и масштаб для волос
+    public Vector2[] hairPositions; // Позиции (X, Y)
+    public Vector2[] hairSizes;     // Размеры (Width, Height)
+
     // Индексы текущих элементов для каждой категории
     private int headIndex = 0;
     private int torsoIndex = 0;
@@ -99,7 +103,20 @@ public class CategorySwitcher : MonoBehaviour
         if (heads.Length > 0) headImage.sprite = heads[headIndex];
         if (torsos.Length > 0) torsoImage.sprite = torsos[torsoIndex];
         if (legs.Length > 0) legsImage.sprite = legs[legsIndex];
-        if (hairs.Length > 0) hairImage.sprite = hairs[hairIndex];
+
+        if (hairs.Length > 0) 
+        {
+            hairImage.sprite = hairs[hairIndex];
+
+            // Устанавливаем позицию
+            if (hairPositions.Length > hairIndex)
+                hairImage.rectTransform.anchoredPosition = hairPositions[hairIndex];
+
+            // Устанавливаем точный размер (ширина и высота)
+            if (hairSizes.Length > hairIndex)
+                hairImage.rectTransform.sizeDelta = hairSizes[hairIndex];
+        }
+
         if (prints.Length > 0) printImage.sprite = prints[printIndex];
     }
 }
