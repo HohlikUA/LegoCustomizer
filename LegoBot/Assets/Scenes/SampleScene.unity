@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.28511, y: 206}
-  m_SizeDelta: {x: 375.72, y: 253.2712}
+  m_AnchoredPosition: {x: -15.68868, y: 210.49023}
+  m_SizeDelta: {x: 498.7848, y: 336.2286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281789354
 MonoBehaviour:
@@ -420,8 +420,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -424.01}
-  m_SizeDelta: {x: 270.9422, y: 77.844}
+  m_AnchoredPosition: {x: -7, y: -329}
+  m_SizeDelta: {x: 329.3953, y: 94.6381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383553502
 MonoBehaviour:
@@ -495,8 +495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -418}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -7, y: -329}
+  m_SizeDelta: {x: 302.45, y: 78.6637}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476089909
 MonoBehaviour:
@@ -545,15 +545,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -743,34 +743,116 @@ MonoBehaviour:
   button2: {fileID: 1953952573}
   prevButton: {fileID: 862039955}
   nextButton: {fileID: 1631101722}
-  headImage: {fileID: 1338221113}
-  torsoImage: {fileID: 281789354}
-  legsImage: {fileID: 713723377}
   hairImage: {fileID: 617232720}
+  accessoryImage: {fileID: 0}
   printImage: {fileID: 0}
-  heads:
-  - {fileID: -855298285791758126, guid: 5059047ca188bd541b48328d080c0337, type: 3}
-  - {fileID: 6937817954938267909, guid: c2efaf0663cc607489b65f08035c7600, type: 3}
-  - {fileID: -6470460504253458178, guid: 13aebdf93c8308e4091480f8e648709e, type: 3}
-  torsos:
-  - {fileID: -7361249463506776999, guid: 3352f5c52805e354a8992b92be8cb074, type: 3}
-  - {fileID: -8473136455892997518, guid: 505fb00fe29554e4fb62936d1612ad60, type: 3}
-  legs:
-  - {fileID: -8400546454809434569, guid: fed0165a663d48d458a3f73ab73b7c2f, type: 3}
-  - {fileID: -8294178876990648902, guid: 2a011e6541be7f14f96e379440aa4e96, type: 3}
+  legsImage: {fileID: 713723377}
+  torsoImage: {fileID: 281789354}
+  headImage: {fileID: 1338221113}
   hairs:
   - {fileID: 8456272588182755374, guid: 8440b754396e0f748b77d1e918e3562b, type: 3}
   - {fileID: -4923288028310878664, guid: 5813365a8dd29544dad91d3069086860, type: 3}
   - {fileID: -4449089251043263886, guid: 31f36fd8357b5b54e9b6350d6b164f41, type: 3}
+  - {fileID: -4190427553623440697, guid: 21e1cb534ca086e4cbd8c650075bea86, type: 3}
+  - {fileID: -418044200808784266, guid: c45221bf9282513449bf96a9b01117a0, type: 3}
+  - {fileID: -6682974322963507002, guid: febb7c2a6fcb4db4b8edb579af31e837, type: 3}
+  - {fileID: -7670513879562429976, guid: 4a7e4733c4471ae4ba9e3c52a1dd5c04, type: 3}
+  - {fileID: -8245447169010440485, guid: 95c5e2c1d98e20845807502608833a6a, type: 3}
+  - {fileID: -6943055486295239837, guid: 909ebf02dbc58984b9d51ceefd03e741, type: 3}
+  - {fileID: -2509852870195812983, guid: 1f33770c83af9a4459e84f416949d611, type: 3}
+  - {fileID: 6740730674125302650, guid: 5c8249f3b7c9c0d48ac29acdb98c2427, type: 3}
+  - {fileID: -1764161255340856349, guid: d2e5686b2267aed4da0f3403065a7014, type: 3}
+  - {fileID: -3563199109595232616, guid: 35697705f793e6e40813dadc32bbddab, type: 3}
+  - {fileID: 4145225308923569688, guid: 93218545821d33947a97ff82b97ef2b5, type: 3}
+  - {fileID: -6671244224564330489, guid: d3bf5423c83e55749a6d75d1668e910d, type: 3}
+  - {fileID: -3148618566333862671, guid: cc214baf98211f24ea4abc17185b2a79, type: 3}
+  - {fileID: -7503167997059562711, guid: 89f046102ea260c4ea60010210ba2780, type: 3}
+  - {fileID: -3321005603853192010, guid: 5e2762639896a6041857a6c31e77ec29, type: 3}
+  - {fileID: 2377746791081002655, guid: c546f815f98936a4a8b5422850aae73f, type: 3}
+  - {fileID: 1054713702948122672, guid: 68e9d35583887274a9f4cafc05728b53, type: 3}
+  - {fileID: -691652805243097525, guid: 74daf312116b58642afd1f0cb5282487, type: 3}
+  - {fileID: -3567807255236423038, guid: e5a9bf36dc1bdc547a143e262a0012e5, type: 3}
+  - {fileID: -8453840508285242441, guid: fee55398d251981408a05ab6680a74d2, type: 3}
+  - {fileID: -1536666565672157649, guid: 0fa294f9ebfaa654f972758202907cd3, type: 3}
+  - {fileID: 8687501935328871753, guid: 0de7091090bdf4249a8a63ee663b12f2, type: 3}
+  accessories: []
   prints: []
+  legs:
+  - {fileID: -8400546454809434569, guid: fed0165a663d48d458a3f73ab73b7c2f, type: 3}
+  - {fileID: -8294178876990648902, guid: 2a011e6541be7f14f96e379440aa4e96, type: 3}
+  torsos:
+  - {fileID: -7361249463506776999, guid: 3352f5c52805e354a8992b92be8cb074, type: 3}
+  - {fileID: -8473136455892997518, guid: 505fb00fe29554e4fb62936d1612ad60, type: 3}
+  heads:
+  - {fileID: -855298285791758126, guid: 5059047ca188bd541b48328d080c0337, type: 3}
+  - {fileID: 6937817954938267909, guid: c2efaf0663cc607489b65f08035c7600, type: 3}
+  - {fileID: -6470460504253458178, guid: 13aebdf93c8308e4091480f8e648709e, type: 3}
+  - {fileID: -4178046375966092550, guid: 0ea983a6adbfaa34493cc17a3b1c5d16, type: 3}
+  - {fileID: 4130640169021434097, guid: dc629e34167c2cd419a272f4ff4aff84, type: 3}
+  - {fileID: 3465286685962602723, guid: 741780c7f02fe4f4995d043abae036d5, type: 3}
+  - {fileID: 7028616704906629411, guid: f9b469a149ee04040b5102dda9b60f81, type: 3}
+  - {fileID: 8288426215254106694, guid: f58cd733f9c668a46951a32f04c7b130, type: 3}
+  - {fileID: 4113829005332862926, guid: c11a322d7c69e6545ac43b97c27c1a73, type: 3}
+  - {fileID: -5099292496197868168, guid: 14491d4be5857204e994a3b800e16a95, type: 3}
+  - {fileID: -2966200626249415253, guid: ee5696d940f594e4aa9591b3497a9b63, type: 3}
+  - {fileID: -1540426309290004842, guid: 66e80e3886fe69840815bfbaf5639a55, type: 3}
+  - {fileID: 8389134475083476877, guid: 944ad11ee135f0c4ebf15ad5da59ba92, type: 3}
+  - {fileID: 4349915267927364619, guid: f7766b11c3d21354fbfefbd5c9b5e934, type: 3}
+  - {fileID: 7680820834086852892, guid: 7f6fe1d21ba273a41bd4f12403a891b7, type: 3}
+  - {fileID: 6660783624410144326, guid: 6f98967f592c8b644b20e0b75e2a114c, type: 3}
+  - {fileID: 2960402581040015946, guid: 82f3989fcf13ce449b6684ae52265928, type: 3}
+  - {fileID: 7157561037332017152, guid: 3b5f6cbdeebdf004881187e836067036, type: 3}
+  - {fileID: 4164744761163438241, guid: 9b44eb056a95a074e8e4cb713f3f70b9, type: 3}
+  - {fileID: -5750353039905602045, guid: 4783fe25be24a084cbbf4e436671e70d, type: 3}
+  - {fileID: -7371509505491802261, guid: 1917d853ecc6b5b499a0bedb59b70a87, type: 3}
+  - {fileID: 2720535173406242035, guid: 5716266b7bbf5834e805f25f4629c0a3, type: 3}
+  - {fileID: 8102358098348255977, guid: 48aa134507bc6094ab18647c5fe2a14d, type: 3}
+  - {fileID: 6894999169920593895, guid: e2928e01528c0404da57008ce17d8d2f, type: 3}
+  - {fileID: -1045133410153605164, guid: 870e6d218edbaed49b1f75d105f98826, type: 3}
+  - {fileID: -5622901713081898559, guid: 8054ef11de57fc54aa0abe982b62f74a, type: 3}
+  - {fileID: -796155573255488767, guid: 270ebb8934bce9d40803841ddfb63bb0, type: 3}
+  - {fileID: 5181654206020448988, guid: 35b3abbc8d155eb4ebe62952dc0a4f56, type: 3}
+  - {fileID: -8038976213705442086, guid: de9caf38b58e07d4fbb2ad9a08fbc99d, type: 3}
+  - {fileID: -30749221642623036, guid: 7423da717a0736b4497dd752cbec76e9, type: 3}
+  - {fileID: 5272401415994956661, guid: c32ce346d7ff88f408fc918c14da669f, type: 3}
+  - {fileID: -4093987921198194536, guid: 50e4f1bd08ad9ae45bdb2a9b2b0ca294, type: 3}
+  - {fileID: 3620510468529025383, guid: 29f18b59ffdfba24f8f336af9506e80c, type: 3}
+  - {fileID: -164082725380277428, guid: 64904170e238af443a4a90f41f335cb0, type: 3}
+  - {fileID: 3207579745489812468, guid: ee4df26d2cc896b4da467faf9d654ba6, type: 3}
+  - {fileID: -2014771838305702419, guid: b478fe5fcd4f6d444bef070c260c7f5b, type: 3}
+  - {fileID: -3180619178420385107, guid: 5d309ff9b2684114cbad1185981e9c9b, type: 3}
+  - {fileID: -6270953770400647376, guid: 04de374d1229ed74484b247aef57edc0, type: 3}
+  - {fileID: 1192843865154028290, guid: 84a7d97e6fc5c5045ba02ba020b50157, type: 3}
+  - {fileID: -8419024768148562069, guid: 532b4d346b744c54fa0eca0b7bd0639f, type: 3}
+  - {fileID: 7059393366267629080, guid: 4dd3d501fc3c7b14bb14665ed28ccd05, type: 3}
+  - {fileID: -4004772778501413904, guid: 4dd8918fa0852b94389b9900b8784848, type: 3}
+  - {fileID: -2947526863502713391, guid: 36358c5e73bc1be4cad1e5b1828ad4b2, type: 3}
+  - {fileID: -6946007662723423348, guid: 6b9f51e8eef63bf42b352d99cbb23d0c, type: 3}
+  - {fileID: -963791335356448533, guid: ec52777627287024aa5feedef6a9e34d, type: 3}
+  - {fileID: 9108365968018652678, guid: 80d884fabb34db44db04f28c74e3cce6, type: 3}
+  - {fileID: 1446792919685844086, guid: 60295a7233eb04a4eafd09ef81630d0c, type: 3}
+  - {fileID: -8586417740124189794, guid: 0c5db87b37c956c4e89521a500060462, type: 3}
+  - {fileID: -1783808350427418317, guid: a53b00f2f3011d84487b3e13519e1af0, type: 3}
+  - {fileID: 281652535026622303, guid: fbc0cb1b5a08a4e46aa8c6955cd5177a, type: 3}
+  - {fileID: -1485282433491618599, guid: 82a9f51bcbea2fc42aff8edbb512fd59, type: 3}
+  - {fileID: 5379824893481949807, guid: ee39c36f9f80a6f468c024d1b9487bbf, type: 3}
+  - {fileID: 3301111849194120939, guid: 693b70209352c1b43a4612778779f7d8, type: 3}
+  - {fileID: -41970534257140035, guid: 24a33090c6ac5eb4090da1ecd2e137b7, type: 3}
+  - {fileID: -8712778243190278716, guid: 3660a4f733ccff74cb563fbb86e6b50f, type: 3}
   hairPositions:
-  - {x: 0.00003051758, y: 15.9299}
-  - {x: 0.00003051758, y: 51}
-  - {x: -6.8788, y: 24.6}
+  - {x: -16, y: 82}
+  - {x: -14, y: 150}
+  - {x: -19.689, y: 113}
   hairSizes:
-  - {x: 225, y: 243}
-  - {x: 225, y: 157}
-  - {x: 276, y: 188}
+  - {x: 291, y: 321}
+  - {x: 279, y: 197}
+  - {x: 417.4919, y: 257}
+  accessoryPositions: []
+  accessorySizes: []
+  printPositions: []
+  printSizes: []
+  legsPositions: []
+  legsSizes: []
 --- !u!114 &486587196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.71623844, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -992,8 +1074,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.50450736, y: 0.72356254}
   m_AnchorMax: {x: 0.50450736, y: 0.72356254}
-  m_AnchoredPosition: {x: -6.8787994, y: 24.600098}
-  m_SizeDelta: {x: 276.7, y: 188.5236}
+  m_AnchoredPosition: {x: -19.689, y: 113}
+  m_SizeDelta: {x: 417.4919, y: 257.4187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &619394800
 GameObject:
@@ -1152,8 +1234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 14.3}
-  m_SizeDelta: {x: 235.847, y: 235.8415}
+  m_AnchoredPosition: {x: -10, y: -44}
+  m_SizeDelta: {x: 313.0972, y: 313.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &713723380
 SpriteRenderer:
@@ -1246,8 +1328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 288.61, y: 369}
-  m_SizeDelta: {x: 110.2131, y: 79.1935}
+  m_AnchoredPosition: {x: 244.99998, y: 457}
+  m_SizeDelta: {x: 133.9904, y: 96.2787}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &862039955
 MonoBehaviour:
@@ -1366,8 +1448,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000017881, y: 427}
-  m_SizeDelta: {x: 395, y: 395}
+  m_AnchoredPosition: {x: -15.310163, y: 503.87747}
+  m_SizeDelta: {x: 524.3798, y: 524.3798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338221113
 MonoBehaviour:
@@ -1713,8 +1795,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 209, y: 535.99}
-  m_SizeDelta: {x: 137.6, y: 100.59}
+  m_AnchoredPosition: {x: 151.36258, y: 631}
+  m_SizeDelta: {x: 167.2858, y: 122.2913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604341367
 MonoBehaviour:
@@ -1834,8 +1916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -293.57, y: 369}
-  m_SizeDelta: {x: 110.2168, y: 79.1997}
+  m_AnchoredPosition: {x: -271.32544, y: 457}
+  m_SizeDelta: {x: 133.995, y: 96.2862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631101722
 MonoBehaviour:
@@ -2226,7 +2308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.2850952, y: 0}
+  m_AnchoredPosition: {x: -0.28515625, y: 0}
   m_SizeDelta: {x: 0, y: -0.0012207031}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924306034
@@ -2358,8 +2440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -215.06, y: 535.99}
-  m_SizeDelta: {x: 137.5969, y: 100.5913}
+  m_AnchoredPosition: {x: -169, y: 631}
+  m_SizeDelta: {x: 167.282, y: 122.2929}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953952573
 MonoBehaviour:

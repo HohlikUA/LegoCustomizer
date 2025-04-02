@@ -9,32 +9,44 @@ public class CategorySwitcher : MonoBehaviour
     public Button prevButton, nextButton; // Кнопки переключения деталей
 
     // Image для каждой категории
-    public Image headImage;
-    public Image torsoImage;
-    public Image legsImage;
-    public Image hairImage;
-    public Image printImage;
+    public Image hairImage;  // Волосся
+    public Image accessoryImage; // Аксесуар
+    public Image printImage; // Принти
+    public Image legsImage;  // Ноги
+    public Image torsoImage; // Торс
+    public Image headImage;  // Обличчя
 
-    private string[] categories = { "Голова", "Торс", "Ноги", "Волосы", "Принты" };
+    private string[] categories = { "Волосся", "Аксесуар", "Принти", "Ноги", "Торс", "Обличчя" };
     private int currentCategoryIndex = 0;
 
     // Массивы спрайтов для каждой категории
-    public Sprite[] heads;
-    public Sprite[] torsos;
-    public Sprite[] legs;
     public Sprite[] hairs;
+    public Sprite[] accessories;
     public Sprite[] prints;
+    public Sprite[] legs;
+    public Sprite[] torsos;
+    public Sprite[] heads;
 
-    // Координаты, размеры и масштаб для волос
-    public Vector2[] hairPositions; // Позиции (X, Y)
-    public Vector2[] hairSizes;     // Размеры (Width, Height)
+    // Координаты и размеры для волос, аксессуаров, принтов и ног
+    public Vector2[] hairPositions;
+    public Vector2[] hairSizes;
+
+    public Vector2[] accessoryPositions;
+    public Vector2[] accessorySizes;
+
+    public Vector2[] printPositions;
+    public Vector2[] printSizes;
+
+    public Vector2[] legsPositions;
+    public Vector2[] legsSizes;
 
     // Индексы текущих элементов для каждой категории
-    private int headIndex = 0;
-    private int torsoIndex = 0;
-    private int legsIndex = 0;
     private int hairIndex = 0;
+    private int accessoryIndex = 0;
     private int printIndex = 0;
+    private int legsIndex = 0;
+    private int torsoIndex = 0;
+    private int headIndex = 0;
 
     void Start()
     {
@@ -48,8 +60,8 @@ public class CategorySwitcher : MonoBehaviour
 
     private void UpdateCategoryText()
     {
-        partText.text = categories[currentCategoryIndex]; // Обновляем название категории
-        UpdateCharacterParts(); // Загружаем картинку текущей категории
+        partText.text = categories[currentCategoryIndex]; 
+        UpdateCharacterParts();
     }
 
     private void OnCategoryNext()
@@ -80,43 +92,74 @@ public class CategorySwitcher : MonoBehaviour
     {
         switch (categories[currentCategoryIndex])
         {
-            case "Голова":
-                headIndex = Mathf.Clamp(headIndex + direction, 0, heads.Length - 1);
+            case "Волосся":
+                hairIndex = Mathf.Clamp(hairIndex + direction, 0, hairs.Length - 1);
                 break;
-            case "Торс":
-                torsoIndex = Mathf.Clamp(torsoIndex + direction, 0, torsos.Length - 1);
+            case "Аксесуар":
+                accessoryIndex = Mathf.Clamp(accessoryIndex + direction, 0, accessories.Length - 1);
+                break;
+            case "Принти":
+                printIndex = Mathf.Clamp(printIndex + direction, 0, prints.Length - 1);
                 break;
             case "Ноги":
                 legsIndex = Mathf.Clamp(legsIndex + direction, 0, legs.Length - 1);
                 break;
-            case "Волосы":
-                hairIndex = Mathf.Clamp(hairIndex + direction, 0, hairs.Length - 1);
+            case "Торс":
+                torsoIndex = Mathf.Clamp(torsoIndex + direction, 0, torsos.Length - 1);
                 break;
-            case "Принты":
-                printIndex = Mathf.Clamp(printIndex + direction, 0, prints.Length - 1);
+            case "Обличчя":
+                headIndex = Mathf.Clamp(headIndex + direction, 0, heads.Length - 1);
                 break;
         }
     }
 
     private void UpdateCharacterParts()
     {
-        if (heads.Length > 0) headImage.sprite = heads[headIndex];
-        if (torsos.Length > 0) torsoImage.sprite = torsos[torsoIndex];
-        if (legs.Length > 0) legsImage.sprite = legs[legsIndex];
-
         if (hairs.Length > 0) 
         {
             hairImage.sprite = hairs[hairIndex];
 
-            // Устанавливаем позицию
             if (hairPositions.Length > hairIndex)
                 hairImage.rectTransform.anchoredPosition = hairPositions[hairIndex];
 
-            // Устанавливаем точный размер (ширина и высота)
             if (hairSizes.Length > hairIndex)
                 hairImage.rectTransform.sizeDelta = hairSizes[hairIndex];
         }
 
-        if (prints.Length > 0) printImage.sprite = prints[printIndex];
+        if (accessories.Length > 0)
+        {
+            accessoryImage.sprite = accessories[accessoryIndex];
+
+            if (accessoryPositions.Length > accessoryIndex)
+                accessoryImage.rectTransform.anchoredPosition = accessoryPositions[accessoryIndex];
+
+            if (accessorySizes.Length > accessoryIndex)
+                accessoryImage.rectTransform.sizeDelta = accessorySizes[accessoryIndex];
+        }
+
+        if (prints.Length > 0)
+        {
+            printImage.sprite = prints[printIndex];
+
+            if (printPositions.Length > printIndex)
+                printImage.rectTransform.anchoredPosition = printPositions[printIndex];
+
+            if (printSizes.Length > printIndex)
+                printImage.rectTransform.sizeDelta = printSizes[printIndex];
+        }
+
+        if (legs.Length > 0)
+        {
+            legsImage.sprite = legs[legsIndex];
+
+            if (legsPositions.Length > legsIndex)
+                legsImage.rectTransform.anchoredPosition = legsPositions[legsIndex];
+
+            if (legsSizes.Length > legsIndex)
+                legsImage.rectTransform.sizeDelta = legsSizes[legsIndex];
+        }
+
+        if (torsos.Length > 0) torsoImage.sprite = torsos[torsoIndex];
+        if (heads.Length > 0) headImage.sprite = heads[headIndex];
     }
 }
