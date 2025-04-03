@@ -15,8 +15,9 @@ public class CategorySwitcher : MonoBehaviour
     public Image legsImage;  // Ноги
     public Image torsoImage; // Торс
     public Image headImage;  // Обличчя
+    public Image armsImage;  // Руки
 
-    private string[] categories = { "Волосся", "Аксесуар", "Принти", "Ноги", "Торс", "Обличчя" };
+    private string[] categories = { "Волосся", "Аксесуар", "Принти", "Ноги", "Торс", "Обличчя", "Руки" };
     private int currentCategoryIndex = 0;
 
     // Массивы спрайтов для каждой категории
@@ -26,8 +27,9 @@ public class CategorySwitcher : MonoBehaviour
     public Sprite[] legs;
     public Sprite[] torsos;
     public Sprite[] heads;
+    public Sprite[] arms;
 
-    // Координаты и размеры для волос, аксессуаров, принтов и ног
+    // Координаты и размеры для волос, аксессуаров, принтов, ног и рук
     public Vector2[] hairPositions;
     public Vector2[] hairSizes;
 
@@ -40,6 +42,9 @@ public class CategorySwitcher : MonoBehaviour
     public Vector2[] legsPositions;
     public Vector2[] legsSizes;
 
+    public Vector2[] armsPositions;
+    public Vector2[] armsSizes;
+
     // Индексы текущих элементов для каждой категории
     private int hairIndex = 0;
     private int accessoryIndex = 0;
@@ -47,6 +52,7 @@ public class CategorySwitcher : MonoBehaviour
     private int legsIndex = 0;
     private int torsoIndex = 0;
     private int headIndex = 0;
+    private int armsIndex = 0;
 
     void Start()
     {
@@ -110,6 +116,9 @@ public class CategorySwitcher : MonoBehaviour
             case "Обличчя":
                 headIndex = Mathf.Clamp(headIndex + direction, 0, heads.Length - 1);
                 break;
+            case "Руки":
+                armsIndex = Mathf.Clamp(armsIndex + direction, 0, arms.Length - 1);
+                break;
         }
     }
 
@@ -118,10 +127,8 @@ public class CategorySwitcher : MonoBehaviour
         if (hairs.Length > 0) 
         {
             hairImage.sprite = hairs[hairIndex];
-
             if (hairPositions.Length > hairIndex)
                 hairImage.rectTransform.anchoredPosition = hairPositions[hairIndex];
-
             if (hairSizes.Length > hairIndex)
                 hairImage.rectTransform.sizeDelta = hairSizes[hairIndex];
         }
@@ -129,10 +136,8 @@ public class CategorySwitcher : MonoBehaviour
         if (accessories.Length > 0)
         {
             accessoryImage.sprite = accessories[accessoryIndex];
-
             if (accessoryPositions.Length > accessoryIndex)
                 accessoryImage.rectTransform.anchoredPosition = accessoryPositions[accessoryIndex];
-
             if (accessorySizes.Length > accessoryIndex)
                 accessoryImage.rectTransform.sizeDelta = accessorySizes[accessoryIndex];
         }
@@ -140,10 +145,8 @@ public class CategorySwitcher : MonoBehaviour
         if (prints.Length > 0)
         {
             printImage.sprite = prints[printIndex];
-
             if (printPositions.Length > printIndex)
                 printImage.rectTransform.anchoredPosition = printPositions[printIndex];
-
             if (printSizes.Length > printIndex)
                 printImage.rectTransform.sizeDelta = printSizes[printIndex];
         }
@@ -151,12 +154,19 @@ public class CategorySwitcher : MonoBehaviour
         if (legs.Length > 0)
         {
             legsImage.sprite = legs[legsIndex];
-
             if (legsPositions.Length > legsIndex)
                 legsImage.rectTransform.anchoredPosition = legsPositions[legsIndex];
-
             if (legsSizes.Length > legsIndex)
                 legsImage.rectTransform.sizeDelta = legsSizes[legsIndex];
+        }
+
+        if (arms.Length > 0)
+        {
+            armsImage.sprite = arms[armsIndex];
+            if (armsPositions.Length > armsIndex)
+                armsImage.rectTransform.anchoredPosition = armsPositions[armsIndex];
+            if (armsSizes.Length > armsIndex)
+                armsImage.rectTransform.sizeDelta = armsSizes[armsIndex];
         }
 
         if (torsos.Length > 0) torsoImage.sprite = torsos[torsoIndex];
