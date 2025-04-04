@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 public class CategorySwitcher : MonoBehaviour
 {
@@ -10,8 +9,6 @@ public class CategorySwitcher : MonoBehaviour
     public Button button1, button2;
     public Button prevButton, nextButton;
     public GameObject galleryButton;
-    public Button copyConfigButton;
-    public GameObject copyPopup;
 
     public Image hairImage, accessoryImage, printImage, legsImage, torsoImage, headImage, armsImage;
 
@@ -31,14 +28,15 @@ public class CategorySwitcher : MonoBehaviour
 
     private PrintGalleryUI printGalleryUI;
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-    [DllImport("__Internal")]
-    private static extern void CopyToClipboard(string str);
-#endif
+    // ✅ Добавлено для конфигурационного окна
+    public GameObject configPopup;
+    public TMP_Text configText;
+    public Button closePopupButton;
+    public Button doneButton;
 
     void Start()
     {
-        printGalleryUI = FindObjectOfType<PrintGalleryUI>();
+        printGalleryUI = Object.FindFirstObjectByType<PrintGalleryUI>();
         UpdateCategoryText();
 
         button1.onClick.AddListener(OnCategoryNext);
@@ -46,8 +44,9 @@ public class CategorySwitcher : MonoBehaviour
         prevButton.onClick.AddListener(OnDetailPrev);
         nextButton.onClick.AddListener(OnDetailNext);
 
-        if (copyConfigButton != null)
-            copyConfigButton.onClick.AddListener(CopyConfiguration);
+        // ✅ Слушатели на кнопки "Готово" и "Закрыть"
+        if (doneButton != null) doneButton.onClick.AddListener(ShowConfigurationPopup);
+        if (closePopupButton != null) closePopupButton.onClick.AddListener(() => configPopup.SetActive(false));
 
         UpdateCharacterParts();
     }
@@ -170,7 +169,15 @@ public class CategorySwitcher : MonoBehaviour
         UpdateCharacterParts();
     }
 
-    public void CopyConfiguration()
+    private string GetSafeName(string[] names, int index)
+    {
+        if (names != null && index >= 0 && index < names.Length)
+            return names[index];
+        return "-";
+    }
+
+    // ✅ Метод отображения итоговой конфигурации
+    private void ShowConfigurationPopup()
     {
         string result =
             "Волосся: " + GetSafeName(hairNames, hairIndex) + "\n" +
@@ -181,45 +188,7 @@ public class CategorySwitcher : MonoBehaviour
             "Принт: " + GetSafeName(printNames, printIndex) + "\n" +
             "Аксесуар: " + GetSafeName(accessoryNames, accessoryIndex);
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-        CopyToClipboard(result);
-#else
-        GUIUtility.systemCopyBuffer = result;
-#endif
-
-        Debug.Log("Скопійовано в буфер:\n" + result);
-
-        if (copyPopup != null)
-            StartCoroutine(ShowCopyPopup());
-    }
-
-    private IEnumerator ShowCopyPopup()
-    {
-        copyPopup.SetActive(true);
-
-        CanvasGroup cg = copyPopup.GetComponent<CanvasGroup>();
-        if (cg == null)
-            cg = copyPopup.AddComponent<CanvasGroup>();
-
-        cg.alpha = 1;
-        yield return new WaitForSeconds(2f);
-
-        float fadeDuration = 0.5f;
-        float t = 0;
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            cg.alpha = 1 - (t / fadeDuration);
-            yield return null;
-        }
-
-        copyPopup.SetActive(false);
-    }
-
-    private string GetSafeName(string[] names, int index)
-    {
-        if (names != null && index >= 0 && index < names.Length)
-            return names[index];
-        return "-";
+        configText.text = result;
+        configPopup.SetActive(true);
     }
 }
