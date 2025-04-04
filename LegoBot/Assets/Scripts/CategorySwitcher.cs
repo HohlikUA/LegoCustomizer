@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 public class CategorySwitcher : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class CategorySwitcher : MonoBehaviour
     private int hairIndex = 0, accessoryIndex = 0, printIndex = 0, legsIndex = 0, torsoIndex = 0, headIndex = 0, armsIndex = 0;
 
     private PrintGalleryUI printGalleryUI;
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern void CopyToClipboard(string str);
+#endif
 
     void Start()
     {
@@ -166,15 +172,21 @@ public class CategorySwitcher : MonoBehaviour
 
     public void CopyConfiguration()
     {
-        string result = "Принт: " + GetSafeName(printNames, printIndex) + "\n" +
-                        "Волосся: " + GetSafeName(hairNames, hairIndex) + "\n" +
-                        "Аксесуар: " + GetSafeName(accessoryNames, accessoryIndex) + "\n" +
-                        "Обличчя: " + GetSafeName(headNames, headIndex) + "\n" +
-                        "Торс: " + GetSafeName(torsoNames, torsoIndex) + "\n" +
-                        "Руки: " + GetSafeName(armNames, armsIndex) + "\n" +
-                        "Ноги: " + GetSafeName(legNames, legsIndex);
+        string result =
+            "Волосся: " + GetSafeName(hairNames, hairIndex) + "\n" +
+            "Обличчя: " + GetSafeName(headNames, headIndex) + "\n" +
+            "Торс: " + GetSafeName(torsoNames, torsoIndex) + "\n" +
+            "Руки: " + GetSafeName(armNames, armsIndex) + "\n" +
+            "Ноги: " + GetSafeName(legNames, legsIndex) + "\n" +
+            "Принт: " + GetSafeName(printNames, printIndex) + "\n" +
+            "Аксесуар: " + GetSafeName(accessoryNames, accessoryIndex);
 
+#if UNITY_WEBGL && !UNITY_EDITOR
+        CopyToClipboard(result);
+#else
         GUIUtility.systemCopyBuffer = result;
+#endif
+
         Debug.Log("Скопійовано в буфер:\n" + result);
 
         if (copyPopup != null)
