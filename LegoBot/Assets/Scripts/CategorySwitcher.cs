@@ -5,50 +5,57 @@ using System.Collections;
 
 public class CategorySwitcher : MonoBehaviour
 {
+    [Header("UI References")]
     public TMP_Text partText;
     public Button button1, button2;
     public Button prevButton, nextButton;
     public GameObject galleryButton;
 
+    public GameObject configPopup;
+    public TMP_Text configText;
+    public Button closePopupButton;
+    public Button doneButton;
+    public Button copyButton;
+    public TMP_Text copiedMessage;
+
+    [Header("Character Images")]
     public Image hairImage, accessoryImage, printImage, legsImage, torsoImage, headImage, armsImage;
 
-    private string[] categories = { "Волосся", "Аксесуар", "Принти", "Ноги", "Руки", "Торс", "Обличчя" };
+    [Header("Categories")]
+    private readonly string[] categories = { "Волосся", "Аксесуар", "Принти", "Ноги", "Руки", "Торс", "Обличчя" };
     private int currentCategoryIndex = 0;
 
+    [Header("Sprites and Names")]
     public Sprite[] hairs, accessories, prints, legs, torsos, heads, arms;
     public string[] hairNames, accessoryNames, printNames, legNames, torsoNames, headNames, armNames;
 
+    [Header("Positions and Sizes")]
     public Vector2[] hairPositions, hairSizes;
     public Vector2[] accessoryPositions, accessorySizes;
     public Vector2[] printPositions, printSizes;
     public Vector2[] legsPositions, legsSizes;
     public Vector2[] armsPositions, armsSizes;
 
-    private int hairIndex = 0, accessoryIndex = 0, printIndex = 0, legsIndex = 0, torsoIndex = 0, headIndex = 0, armsIndex = 0;
-
+    private int hairIndex, accessoryIndex, printIndex, legsIndex, torsoIndex, headIndex, armsIndex;
     private PrintGalleryUI printGalleryUI;
 
-    // ✅ Добавлено для конфигурационного окна
-    public GameObject configPopup;
-    public TMP_Text configText;
-    public Button closePopupButton;
-    public Button doneButton;
-
-    void Start()
+    private void Start()
     {
-        printGalleryUI = Object.FindFirstObjectByType<PrintGalleryUI>();
-        UpdateCategoryText();
+        printGalleryUI = FindObjectOfType<PrintGalleryUI>();
 
         button1.onClick.AddListener(OnCategoryNext);
         button2.onClick.AddListener(OnCategoryPrev);
         prevButton.onClick.AddListener(OnDetailPrev);
         nextButton.onClick.AddListener(OnDetailNext);
 
-        // ✅ Слушатели на кнопки "Готово" и "Закрыть"
         if (doneButton != null) doneButton.onClick.AddListener(ShowConfigurationPopup);
         if (closePopupButton != null) closePopupButton.onClick.AddListener(() => configPopup.SetActive(false));
+        if (copyButton != null) copyButton.onClick.AddListener(CopyConfigurationToClipboard);
 
-        UpdateCharacterParts();
+        if (copiedMessage != null)
+            copiedMessage.gameObject.SetActive(false); // по умолчанию скрыт
+
+        UpdateCategoryText();
     }
 
     private void UpdateCategoryText()
@@ -87,80 +94,55 @@ public class CategorySwitcher : MonoBehaviour
         switch (categories[currentCategoryIndex])
         {
             case "Волосся":
-                hairIndex = Mathf.Clamp(hairIndex + direction, 0, hairs.Length - 1);
+                hairIndex = GetNewIndex(hairIndex, direction, hairs.Length);
                 break;
             case "Аксесуар":
-                accessoryIndex = Mathf.Clamp(accessoryIndex + direction, 0, accessories.Length - 1);
+                accessoryIndex = GetNewIndex(accessoryIndex, direction, accessories.Length);
                 break;
             case "Принти":
-                printIndex = Mathf.Clamp(printIndex + direction, 0, prints.Length - 1);
+                printIndex = GetNewIndex(printIndex, direction, prints.Length);
                 break;
             case "Ноги":
-                legsIndex = Mathf.Clamp(legsIndex + direction, 0, legs.Length - 1);
-                break;
-            case "Торс":
-                torsoIndex = Mathf.Clamp(torsoIndex + direction, 0, torsos.Length - 1);
-                break;
-            case "Обличчя":
-                headIndex = Mathf.Clamp(headIndex + direction, 0, heads.Length - 1);
+                legsIndex = GetNewIndex(legsIndex, direction, legs.Length);
                 break;
             case "Руки":
-                armsIndex = Mathf.Clamp(armsIndex + direction, 0, arms.Length - 1);
+                armsIndex = GetNewIndex(armsIndex, direction, arms.Length);
+                break;
+            case "Торс":
+                torsoIndex = GetNewIndex(torsoIndex, direction, torsos.Length);
+                break;
+            case "Обличчя":
+                headIndex = GetNewIndex(headIndex, direction, heads.Length);
                 break;
         }
     }
 
+    private int GetNewIndex(int current, int dir, int max)
+    {
+        return Mathf.Clamp(current + dir, 0, Mathf.Max(0, max - 1));
+    }
+
     private void UpdateCharacterParts()
     {
-        if (hairs.Length > 0)
-        {
-            hairImage.sprite = hairs[hairIndex];
-            if (hairPositions.Length > hairIndex)
-                hairImage.rectTransform.anchoredPosition = hairPositions[hairIndex];
-            if (hairSizes.Length > hairIndex)
-                hairImage.rectTransform.sizeDelta = hairSizes[hairIndex];
-        }
+        UpdatePart(hairImage, hairs, hairIndex, hairPositions, hairSizes);
+        UpdatePart(accessoryImage, accessories, accessoryIndex, accessoryPositions, accessorySizes);
+        UpdatePart(printImage, prints, printIndex, printPositions, printSizes);
+        UpdatePart(legsImage, legs, legsIndex, legsPositions, legsSizes);
+        UpdatePart(armsImage, arms, armsIndex, armsPositions, armsSizes);
 
-        if (accessories.Length > 0)
-        {
-            accessoryImage.sprite = accessories[accessoryIndex];
-            if (accessoryPositions.Length > accessoryIndex)
-                accessoryImage.rectTransform.anchoredPosition = accessoryPositions[accessoryIndex];
-            if (accessorySizes.Length > accessoryIndex)
-                accessoryImage.rectTransform.sizeDelta = accessorySizes[accessoryIndex];
-        }
+        if (torsos.Length > 0) torsoImage.sprite = torsos[torsoIndex];
+        if (heads.Length > 0) headImage.sprite = heads[headIndex];
+    }
 
-        if (prints.Length > 0)
-        {
-            printImage.sprite = prints[printIndex];
-            if (printPositions.Length > printIndex)
-                printImage.rectTransform.anchoredPosition = printPositions[printIndex];
-            if (printSizes.Length > printIndex)
-                printImage.rectTransform.sizeDelta = printSizes[printIndex];
-        }
+    private void UpdatePart(Image img, Sprite[] sprites, int index, Vector2[] positions, Vector2[] sizes)
+    {
+        if (sprites.Length == 0 || index >= sprites.Length) return;
 
-        if (legs.Length > 0)
-        {
-            legsImage.sprite = legs[legsIndex];
-            if (legsPositions.Length > legsIndex)
-                legsImage.rectTransform.anchoredPosition = legsPositions[legsIndex];
-            if (legsSizes.Length > legsIndex)
-                legsImage.rectTransform.sizeDelta = legsSizes[legsIndex];
-        }
-
-        if (arms.Length > 0)
-        {
-            armsImage.sprite = arms[armsIndex];
-            if (armsPositions.Length > armsIndex)
-                armsImage.rectTransform.anchoredPosition = armsPositions[armsIndex];
-            if (armsSizes.Length > armsIndex)
-                armsImage.rectTransform.sizeDelta = armsSizes[armsIndex];
-        }
-
-        if (torsos.Length > 0)
-            torsoImage.sprite = torsos[torsoIndex];
-        if (heads.Length > 0)
-            headImage.sprite = heads[headIndex];
+        img.sprite = sprites[index];
+        if (positions.Length > index)
+            img.rectTransform.anchoredPosition = positions[index];
+        if (sizes.Length > index)
+            img.rectTransform.sizeDelta = sizes[index];
     }
 
     public void SetPrintFromGallery(int index)
@@ -171,24 +153,42 @@ public class CategorySwitcher : MonoBehaviour
 
     private string GetSafeName(string[] names, int index)
     {
-        if (names != null && index >= 0 && index < names.Length)
-            return names[index];
-        return "-";
+        return (names != null && index >= 0 && index < names.Length) ? names[index] : "-";
     }
 
-    // ✅ Метод отображения итоговой конфигурации
     private void ShowConfigurationPopup()
     {
         string result =
-            "Волосся: " + GetSafeName(hairNames, hairIndex) + "\n" +
-            "Обличчя: " + GetSafeName(headNames, headIndex) + "\n" +
-            "Торс: " + GetSafeName(torsoNames, torsoIndex) + "\n" +
-            "Руки: " + GetSafeName(armNames, armsIndex) + "\n" +
-            "Ноги: " + GetSafeName(legNames, legsIndex) + "\n" +
-            "Принт: " + GetSafeName(printNames, printIndex) + "\n" +
-            "Аксесуар: " + GetSafeName(accessoryNames, accessoryIndex);
+            $"Волосся: {GetSafeName(hairNames, hairIndex)}\n" +
+            $"Обличчя: {GetSafeName(headNames, headIndex)}\n" +
+            $"Торс: {GetSafeName(torsoNames, torsoIndex)}\n" +
+            $"Руки: {GetSafeName(armNames, armsIndex)}\n" +
+            $"Ноги: {GetSafeName(legNames, legsIndex)}\n" +
+            $"Принт: {GetSafeName(printNames, printIndex)}\n" +
+            $"Аксесуар: {GetSafeName(accessoryNames, accessoryIndex)}";
 
         configText.text = result;
         configPopup.SetActive(true);
+    }
+
+    private void CopyConfigurationToClipboard()
+    {
+        GUIUtility.systemCopyBuffer = configText.text;
+
+        if (copiedMessage != null)
+        {
+            copiedMessage.gameObject.SetActive(true);
+            StopAllCoroutines();
+            StartCoroutine(HideCopiedMessage());
+        }
+
+        Debug.Log("Скопійовано в буфер обміну: " + configText.text);
+    }
+
+    private IEnumerator HideCopiedMessage()
+    {
+        yield return new WaitForSeconds(2f);
+        if (copiedMessage != null)
+            copiedMessage.gameObject.SetActive(false);
     }
 }

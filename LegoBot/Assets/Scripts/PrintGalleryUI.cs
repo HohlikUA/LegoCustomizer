@@ -10,39 +10,51 @@ public class PrintGalleryUI : MonoBehaviour
 
     private CategorySwitcher categorySwitcher;
 
-    void Start()
+    private void Start()
     {
-        galleryPanel.SetActive(false);
-        closeGalleryButton.onClick.AddListener(HideGallery);
+        if (galleryPanel != null) galleryPanel.SetActive(false);
+        if (closeGalleryButton != null) closeGalleryButton.onClick.AddListener(HideGallery);
         categorySwitcher = FindObjectOfType<CategorySwitcher>();
     }
 
     public void ShowGallery()
     {
-        galleryPanel.SetActive(true);
-        PopulateGallery();
+        if (galleryPanel != null)
+        {
+            galleryPanel.SetActive(true);
+            PopulateGallery();
+        }
     }
 
     public void HideGallery()
     {
-        galleryPanel.SetActive(false);
+        if (galleryPanel != null)
+            galleryPanel.SetActive(false);
     }
 
-    void PopulateGallery()
+    private void PopulateGallery()
     {
         foreach (Transform child in galleryContent)
             Destroy(child.gameObject);
+
+        if (categorySwitcher == null || categorySwitcher.prints == null) return;
 
         for (int i = 0; i < categorySwitcher.prints.Length; i++)
         {
             int index = i;
             GameObject btn = Instantiate(printButtonPrefab, galleryContent);
-            btn.GetComponent<Image>().sprite = categorySwitcher.prints[i];
-            btn.GetComponent<Button>().onClick.AddListener(() =>
+            Image img = btn.GetComponent<Image>();
+            if (img != null) img.sprite = categorySwitcher.prints[i];
+
+            Button button = btn.GetComponent<Button>();
+            if (button != null)
             {
-                categorySwitcher.SetPrintFromGallery(index);
-                HideGallery();
-            });
+                button.onClick.AddListener(() =>
+                {
+                    categorySwitcher.SetPrintFromGallery(index);
+                    HideGallery();
+                });
+            }
         }
     }
 }
