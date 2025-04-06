@@ -532,7 +532,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000030518}
-  m_SizeDelta: {x: 5.8265, y: 780}
+  m_SizeDelta: {x: 5.8265, y: 10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &243172479
 MonoBehaviour:
@@ -568,8 +568,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 10, y: 10}
+  m_CellSize: {x: 125, y: 100}
+  m_Spacing: {x: 20, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &263629280
@@ -938,8 +938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.3135, y: 241}
-  m_SizeDelta: {x: 320.207, y: 273.35}
+  m_AnchoredPosition: {x: 6.488, y: 237.8}
+  m_SizeDelta: {x: 291.87, y: 249.1486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365468562
 MonoBehaviour:
@@ -961,9 +961,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a3e7756ed16be2444b1ac28385f9860c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: acd0568500a864f4dbc021c3f352e540, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1548,8 +1548,75 @@ MonoBehaviour:
   - {fileID: -608224756955341217, guid: 4df1672a008859f4f93f1d027044824b, type: 3}
   prints:
   - {fileID: 351846231007456915, guid: 44169c0f2a2091d4cb83ee8668f8ceaa, type: 3}
-  - {fileID: -2330622252861330509, guid: 9ba578fbe71980a45933e79c47cafc1b, type: 3}
-  - {fileID: 8687501935328871753, guid: 4e03bc5b077753543be9718099e27428, type: 3}
+  - {fileID: -831877360847257224, guid: 4d56447faff7bbb48a293cbea0f70ee3, type: 3}
+  - {fileID: 8128475656250280581, guid: c8ad2975ebd466a419cfe440e91f8247, type: 3}
+  - {fileID: -578329113295138531, guid: 56ea1fb26fd230d4ebb74db05522fdcd, type: 3}
+  - {fileID: 3854078061727317047, guid: 422186291f0042f47ac0b52e40b1c3d9, type: 3}
+  - {fileID: -7069061048736231868, guid: 2e9e42b7b870d7e4bbe11ea112488fc7, type: 3}
+  - {fileID: 21300000, guid: d676fb4213b5d7244b7b421b65094cd9, type: 3}
+  - {fileID: 21300000, guid: a3e7756ed16be2444b1ac28385f9860c, type: 3}
+  - {fileID: 21300000, guid: 15aa7bb9dedf731499cc6c88156b9c11, type: 3}
+  - {fileID: 21300000, guid: abaffebc7c4523a49be3ac25ee720410, type: 3}
+  - {fileID: 21300000, guid: 59f184149556d2d479319821e16131e0, type: 3}
+  - {fileID: 21300000, guid: d2a14ba827be0e14387335f0ed70adaf, type: 3}
+  - {fileID: 21300000, guid: 0e04b9a51f2ebe840baf06005d19f037, type: 3}
+  - {fileID: 21300000, guid: 8afeb8893f3735944bf0913d03680cad, type: 3}
+  - {fileID: 21300000, guid: 7d6c8d28752967843a0e23ef9ee61469, type: 3}
+  - {fileID: 21300000, guid: a55bdf6ea131aec44b142a8662747899, type: 3}
+  - {fileID: 21300000, guid: 03dc583cd3763f943b3817ceff7048b0, type: 3}
+  - {fileID: 21300000, guid: 3f61dc910893f0042b0c352199d73ed8, type: 3}
+  - {fileID: 21300000, guid: 0117bb6726ed2cd41b61f5cd6eca737e, type: 3}
+  - {fileID: 21300000, guid: c93cd9de0f73dc04ea8f37976ec752c5, type: 3}
+  - {fileID: 21300000, guid: 370753f558b18544aa5f4757a05a82b1, type: 3}
+  - {fileID: 21300000, guid: 00675bd862a8762468962d9d633f80a9, type: 3}
+  - {fileID: 21300000, guid: 25f99a18c587a3f4abdebadc735f71c4, type: 3}
+  - {fileID: 21300000, guid: 289871357e19a3b44b3cdf3b3f58b6d5, type: 3}
+  - {fileID: 21300000, guid: e3aeed7e615c3e948aa176e7293cd489, type: 3}
+  - {fileID: 21300000, guid: ef08a69623ab47d4180ceae2accf809a, type: 3}
+  - {fileID: 4121720358866829923, guid: 636183eb97592cd449e0ff493e81e74d, type: 3}
+  - {fileID: 1178072204048357644, guid: 2859c7d573c047444b3e0eb4dc2a064e, type: 3}
+  - {fileID: 21300000, guid: 7f7d44b32074bf143adf95176540ce32, type: 3}
+  - {fileID: 21300000, guid: 47512e66f3a6db94994e138a6cd59542, type: 3}
+  - {fileID: 6977546632473454874, guid: 6a6e258bb3ffa264cb549dfda8dd87ad, type: 3}
+  - {fileID: 21300000, guid: 64dbbf1163e100448abc1059bd6b34a4, type: 3}
+  - {fileID: 2295260658249656390, guid: c2eaec9b03beff24c8cebeb93fee66de, type: 3}
+  - {fileID: -8695214209817995305, guid: ede5c758be41b394681f8cd80235502e, type: 3}
+  - {fileID: -3776143072051319527, guid: a27bc327f6a9d9b4ca656a920864fa26, type: 3}
+  - {fileID: 21300000, guid: 9c29f19b929a14c43a6bbd100f8d419d, type: 3}
+  - {fileID: 21300000, guid: a40b1147327094049a6bb202541cc1af, type: 3}
+  - {fileID: 21300000, guid: 43adb5c717902d34a84c84b785a3864b, type: 3}
+  - {fileID: 21300000, guid: 03e124eb8d793b14eb685f119d9595fd, type: 3}
+  - {fileID: 21300000, guid: 1068b1dd7923566469eea7a2ff4404aa, type: 3}
+  - {fileID: 21300000, guid: fe2bddf3934b33844a0081d179493a4d, type: 3}
+  - {fileID: 21300000, guid: 8e8d9f9dd02f6bf4ea4c5a56ce2c5784, type: 3}
+  - {fileID: 21300000, guid: e5a97b1eeeb99504183def0392f597a3, type: 3}
+  - {fileID: 21300000, guid: 1f23e0dccaf453946912b8905c7d704d, type: 3}
+  - {fileID: 21300000, guid: 08a8c4d8aacc46a4d97031ac6ccd7a16, type: 3}
+  - {fileID: 21300000, guid: 675bf918668eb4242902cec1bbf0fd8e, type: 3}
+  - {fileID: 21300000, guid: 4c64c945a10b82c448c9f2fd0735bc47, type: 3}
+  - {fileID: 21300000, guid: 648fd6f53a90913428420cfe4ba2fd7d, type: 3}
+  - {fileID: 21300000, guid: ef63faa7102186a4b849fa669d56216b, type: 3}
+  - {fileID: 21300000, guid: 99535c52dfbee314f93bc632eaa1bede, type: 3}
+  - {fileID: 21300000, guid: 5dc5f7fd6c662f14399b5116725d398f, type: 3}
+  - {fileID: 21300000, guid: 6fbb2d630cffe924485e341eb9894b72, type: 3}
+  - {fileID: 21300000, guid: 76f007e30a572bb44b09e20af76dd711, type: 3}
+  - {fileID: 21300000, guid: 34e9569373a72494e93a39ff0d9fea85, type: 3}
+  - {fileID: 21300000, guid: 9fd29c83b702a6249b21a069e53c0e5b, type: 3}
+  - {fileID: 21300000, guid: 5686f149276507148b68024a9a53e855, type: 3}
+  - {fileID: 21300000, guid: 0688394014eadbb4fb3c34851e7df1de, type: 3}
+  - {fileID: 21300000, guid: 469a5356edae03e4b82743f83aef511c, type: 3}
+  - {fileID: 21300000, guid: d47504abe43086448972352d0b10a358, type: 3}
+  - {fileID: 21300000, guid: 329763ddfd4947d43a415d8f2695d744, type: 3}
+  - {fileID: 21300000, guid: 5cd5e53be0a4b1f4cb96949af085a465, type: 3}
+  - {fileID: 21300000, guid: f05e05fe2235044499ac9bfb143cde4c, type: 3}
+  - {fileID: 21300000, guid: d6155b3386f307142a7cb3b2f59fc41d, type: 3}
+  - {fileID: 21300000, guid: d35d1c09589350c4f8180a9bea503d0f, type: 3}
+  - {fileID: 21300000, guid: 8b54ce27b5afcae44ac038bda2872e52, type: 3}
+  - {fileID: 21300000, guid: 3f42ce6bc31867d4d8af7ab96533abaf, type: 3}
+  - {fileID: 21300000, guid: d48340c6af9f44b4ab6a9b5b6ae0419e, type: 3}
+  - {fileID: 21300000, guid: 92026720a0a3ac64cade62fe7693f084, type: 3}
+  - {fileID: 21300000, guid: acd0568500a864f4dbc021c3f352e540, type: 3}
+  - {fileID: 0}
   legs:
   - {fileID: -1783352495413838880, guid: 19353f95689d67942bdef38628dc7290, type: 3}
   - {fileID: -8970014380196870326, guid: 80620a6ca49c733409ddcd53e45b0521, type: 3}
@@ -1710,7 +1777,80 @@ MonoBehaviour:
   - "\u041A4"
   - "\u041B1"
   - "\u041B2"
-  printNames: []
+  printNames:
+  - 0
+  - "\u041624"
+  - "\u041623"
+  - "\u041030"
+  - "\u041019"
+  - "\u041020"
+  - "\u041613"
+  - "\u041025"
+  - "\u041023"
+  - "\u041024"
+  - "\u041223"
+  - "\u041130"
+  - "\u041129"
+  - "\u041128"
+  - "\u041328"
+  - "\u041027"
+  - "\u041028"
+  - "\u041126"
+  - "\u041226"
+  - "\u041026"
+  - "\u041127"
+  - "\u041123"
+  - "\u041125"
+  - "\u041124"
+  - "\u041224"
+  - "\u041231"
+  - "\u041529"
+  - "\u041530"
+  - "\u041331"
+  - "\u041330"
+  - "\u041531"
+  - "\u041329"
+  - "\u041431"
+  - "\u041429"
+  - "\u041430"
+  - "\u041326"
+  - "\u041227"
+  - "\u041428"
+  - "\u041528"
+  - "\u041627"
+  - "\u041327"
+  - "\u041626"
+  - "\u041526"
+  - "\u041427"
+  - "\u041527"
+  - "\u041228"
+  - "\u041628"
+  - "\u041426"
+  - "\u041230"
+  - "\u04049"
+  - "\u041410"
+  - "\u040410"
+  - "\u04048"
+  - "\u04149"
+  - "\u04148"
+  - "\u04119"
+  - "\u041110"
+  - "\u04109"
+  - "\u04128"
+  - "\u041010"
+  - "\u041310"
+  - "\u04118"
+  - "\u04108"
+  - "\u04158"
+  - "\u04159"
+  - "\u04139"
+  - "\u04138"
+  - "\u04129"
+  - "\u041210"
+  - 
+  - 
+  - 
+  - 
   legNames:
   - 1
   - 2
@@ -1982,12 +2122,150 @@ MonoBehaviour:
   - 151.401
   printPositions:
   - {x: 6.3135, y: 241}
-  - {x: 6.3135, y: 241}
-  - {x: 6.3135, y: 241}
+  - {x: 69, y: 270}
+  - {x: 69, y: 270}
+  - {x: 69, y: 270}
+  - {x: 69, y: 270}
+  - {x: 69, y: 270}
+  - {x: 69, y: 270}
+  - {x: 9, y: 235}
+  - {x: 9, y: 235}
+  - {x: 9, y: 235}
+  - {x: 13.89, y: 244}
+  - {x: 7, y: 244}
+  - {x: 6.488, y: 306}
+  - {x: 15.239, y: 248}
+  - {x: 7, y: 241}
+  - {x: 7, y: 241}
+  - {x: 7, y: 241}
+  - {x: 8.9308, y: 243}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 6.488, y: 241}
+  - {x: 7, y: 295}
+  - {x: 13.608, y: 243}
+  - {x: 13.608, y: 243}
+  - {x: 6.488, y: 245}
+  - {x: 6.488, y: 216}
+  - {x: 6.488, y: 285}
+  - {x: 6.488, y: 285}
+  - {x: 3.745, y: 238}
+  - {x: 6.488, y: 238}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   printSizes:
   - {x: 320.207, y: 273.35}
-  - {x: 320.207, y: 273.35}
-  - {x: 320.207, y: 273.35}
+  - {x: 87.6604, y: 75}
+  - {x: 87.6604, y: 75}
+  - {x: 87.6604, y: 75}
+  - {x: 87.6604, y: 75}
+  - {x: 87.6604, y: 75}
+  - {x: 87.6604, y: 75}
+  - {x: 334.375, y: 285}
+  - {x: 334.375, y: 285}
+  - {x: 334.375, y: 285}
+  - {x: 307.8, y: 267}
+  - {x: 326.01, y: 278}
+  - {x: 151.6635, y: 129}
+  - {x: 303.6424, y: 259}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 325.4415, y: 278}
+  - {x: 184.838, y: 158}
+  - {x: 304.87, y: 260}
+  - {x: 304.87, y: 260}
+  - {x: 241.7409, y: 206}
+  - {x: 241.7409, y: 206}
+  - {x: 273.18, y: 233.1975}
+  - {x: 273.18, y: 233.1975}
+  - {x: 291.87, y: 249.1486}
+  - {x: 291.87, y: 249.1486}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   legsPositions: []
   legsSizes: []
   armsPositions:
@@ -5131,7 +5409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7623195422328705732, guid: a7abfa8455a1313418853e902ee7ef89, type: 3}
+  m_Sprite: {fileID: 3408418492157747692, guid: 1b0d017ffbb08994fb79c75f1b53c202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
